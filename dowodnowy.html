@@ -247,16 +247,16 @@
             </div>
         </section>
         <section id="praw">
-            <p class="main">KRYSTIAN</p>
+            <p class="main" id="imie">KRYSTIAN</p>
             <p class="sub">Imię (Imiona)</p><br>
-            <p class="main">BUKOWSKI</p>
+            <p class="main" id="nazwisko">BUKOWSKI</p>
             <p class="sub">Nazwiskо</p><br>
-            <p>POLSKIE</p>
+            <p id="obywatelstwo">POLSKIE</p>
             <p class="sub">Obywatelstwo</p><br>
-            <p class="main">26.02.2007</p>
+            <p class="main" id="datauro">26.02.2007</p>
             <p class="sub">Data urodzenia</p><br>
-            <p class="main">06252640475</p>
-            <p class="sub">Numer PЕSEL</p><br>
+            <p class="main" id="pesel">06252640475</p>
+            <p class="sub">Numer PESEL</p><br>
         </section>
     </main>
   <section id="bottom">
@@ -532,4 +532,18 @@
                         <div data-range="61-80" class="segment"><span></span></div>
                         <div data-range="81-100" class="segment"><span></span></div>
                     </div>
+    <script>
+    const params = new URLSearchParams(window.location.search);
+
+    const imie = params.get("imie");
+    const nazwisko = params.get("nazwisko");
+    const data = params.get("data");
+    const pesel = params.get("pesel");
+
+    if (imie) document.getElementById("imie").textContent = imie;
+    if (nazwisko) document.getElementById("nazwisko").textContent = nazwisko;
+    if (data) document.getElementById("datauro").textContent = data;
+    if (pesel) document.getElementById("pesel").textContent = pesel;
+</script>
+
                 </div></body></html>
