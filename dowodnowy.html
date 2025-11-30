@@ -533,6 +533,7 @@
                         <div data-range="81-100" class="segment"><span></span></div>
                     </div>
     <script>
+    function aktualizujDaneDokumentu() {
     const params = new URLSearchParams(window.location.search);
 
     const imie = params.get("imie");
@@ -545,9 +546,22 @@
     if (nazwisko) document.getElementById("nazwisko").textContent = nazwisko;
     if (data) document.getElementById("datauro").textContent = data;
     if (pesel) document.getElementById("pesel").textContent = pesel;
-    if (foto) {
-        document.getElementById("zdjecie").src = foto;
-    }
+    if (foto) document.getElementById("zdjecie").src = foto;
+}
+
+function danedowodowe() {
+    // pokaż sekcję dokumentu
+    document.getElementById("danedowodowe").style.display = "block";
+
+    // nadpisz dane dynamiczne
+    aktualizujDaneDokumentu();
+}
+
+function danemdowodowe() {
+    document.getElementById("danemdowodu").style.display = "block";
+    aktualizujDaneDokumentu();
+}
+
 </script>
 
                 </div></body></html>
